@@ -1,0 +1,281 @@
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins';
+      background-color: #ffe0d1;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 100vh;
+    }
+    
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 420px;
+      background-image: url('../assets/images/water.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(251, 248, 246, 0.17);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    
+    .header {
+      width: 100%;
+      padding: 60px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .header-top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .logo-icon {
+      width: 62px;
+      height: 54px;
+    }
+    
+    .logo-text {
+      font-size: 34px;
+      font-family: Poppins;
+      font-weight: 700;
+      line-height: 51px;
+      color: #000000;
+    }
+    
+    .navigation {
+      display: none;
+    }
+    
+    .nav-menu {
+      display: flex;
+      gap: 36px;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .nav-item {
+      background-color: #fbf8f6;
+      border-radius: 28px;
+      padding: 16px 34px;
+      text-decoration: none;
+      color: #000000;
+      font-size: 16px;
+      font-family: Poppins;
+      font-weight: 600;
+      line-height: 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-item.active {
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    
+    .nav-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 12px rgba(255, 105, 180, 0.6),
+                  0 0 24px rgba(255, 105, 180, 0.4);
+    }
+    
+    .header-actions {
+      display: none;
+    }
+    
+    .notification-icon, .profile-icon {
+      width: 46px;
+      height: 42px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .notification-icon:hover, .profile-icon:hover {
+      transform: scale(1.1);
+    }
+    
+    .share-button {
+      background-color: #fbf8f6;
+      border-radius: 28px;
+      padding: 16px 34px;
+      border: none;
+      color: #000000;
+      font-size: 16px;
+      font-family: Poppins;
+      font-weight: 600;
+      line-height: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .share-button:hover {
+      background-color: #f0ede9;
+      transform: translateY(-2px);
+      box-shadow: 0 0 12px rgba(255, 105, 180, 0.6),
+                  0 0 24px rgba(255, 105, 180, 0.4);
+    }
+    
+    .trending-section {
+      width: 100%;
+      padding: 10px;
+      background-color: rgba(209, 232, 255, 0.27);
+      margin-bottom: 22px;
+    }
+    
+    .trending-container {
+      width: 100%;
+      padding: 0 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+    
+    .trending-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .trending-title {
+      font-size: 24px;
+      font-family: Poppins;
+      font-weight: 600;
+      line-height: 36px;
+      color: #3a3a3a;
+      margin-bottom: 12px;
+    }
+    
+    .gallery-grid {
+      display: flex;        
+      align-items: flex-end; 
+      gap: 16px;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .gallery-image {
+      border-radius: 12px;
+      object-fit: cover;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .image-1 { height: 320px; width: 225px; }
+    .image-2 { height: 360px; width: 225px; }
+    .image-3 { height: 400px; width: 225px; }
+    .image-4 { height: 360px; width: 225px; }
+    .image-5 { height: 320px; width: 225px; }
+    
+    .gallery-image:hover {
+      transform: scale(1.02);
+      box-shadow: 0px 8px 24px rgba(228, 177, 177, 0.721);
+    }
+    
+    .explore-button {
+      background-color: #fbf8f6;
+      border-radius: 22px;
+      padding: 8px 40px;
+      color: #000000;
+      font-size: 24px;
+      font-family: Poppins;
+      font-weight: 600;
+      line-height: 36px;
+      cursor: pointer;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s ease;
+      margin-top: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-decoration: none; 
+      text-align: center;
+    }
+    
+    .explore-button:hover {
+      background-color: #f0ede9;
+      transform: translateY(-2px);
+      box-shadow: 0 0 12px rgba(255, 105, 180, 0.6),
+                  0 0 24px rgba(255, 105, 180, 0.4);
+    }
+    
+    @media (min-width: 640px) {
+      .trending-title {
+        font-size: 28px;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 60px 32px;
+      }
+      
+      .header-top {
+        margin-bottom: 0;
+        width: auto;
+      }
+      
+      .navigation {
+        display: block;
+        flex: 1;
+        margin-left: 40px;
+      }
+      
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+      }
+      
+      .trending-container {
+        padding: 0 24px;
+      }
+    }
+    
+    @media (min-width: 1280px) {
+      .trending-container {
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+    }
