@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #FBF8F6;
+  color: #333;
+}
+
+.navbar {
+  background: transparent; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.nav-links button {
+  border: none;
+  padding: 10px 24px;
+  background: #ffffff;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.nav-links button:hover {
+  background: #f6f6f6;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.nav-icons button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-icons button:hover {
+  background: #f6f6f6;
+}
+
+.cover {
+  position: relative;
+  height: 250px;
+  background: url("../assets/images/water.png") no-repeat center center/cover;
+}
+
+.page-title {
+  margin: 40px auto 30px;
+  background: #ffffff;
+  border-radius: 30px;
+  padding: 12px 35px;
+  width: fit-content;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.3px;
+}
+
+.notification-section {
+  width: 70%;
+  margin: 0 auto 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.notification-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: #fff;
+  padding: 18px 24px;
+  border-radius: 16px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.notification-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.notification-card .icon {
+  font-size: 26px;
+  flex-shrink: 0;
+  color: #444;
+}
+
+.notification-card .text {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.notification-card .time {
+  font-size: 12px;
+  color: #777;
+  margin-top: 6px;
+}
+
+/* UNREAD HIGHLIGHT (same green tone as "Your Uploads" button) */
+.notification-card.unread {
+  background: #E4F8EB;
+  border-left: 6px solid #C8F0D1;
+}
+
+/* Fade-in Animation (smooth entry) */
+.notification-card {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
