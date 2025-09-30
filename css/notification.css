@@ -5,9 +5,8 @@ body {
   color: #333;
 }
 
-/* Navbar */
 .navbar {
-  background: transparent; /* keep transparent */
+  background: transparent; 
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -78,15 +77,12 @@ body {
   background: #f6f6f6;
 }
 
-/* Cover Section */
 .cover {
   position: relative;
   height: 250px;
   background: url("../assets/images/water.png") no-repeat center center/cover;
 }
 
-
-/* ✅ PAGE TITLE (centered rounded white pill) */
 .page-title {
   margin: 40px auto 30px;
   background: #ffffff;
@@ -100,7 +96,6 @@ body {
   letter-spacing: 0.3px;
 }
 
-/* ✅ NOTIFICATION SECTION (same spacing aesthetic) */
 .notification-section {
   width: 70%;
   margin: 0 auto 60px;
@@ -109,7 +104,6 @@ body {
   gap: 20px;
 }
 
-/* ✅ NOTIFICATION CARD (consistent shadow, roundness & hover lift) */
 .notification-card {
   display: flex;
   align-items: flex-start;
@@ -144,13 +138,13 @@ body {
   margin-top: 6px;
 }
 
-/* ✅ UNREAD HIGHLIGHT (same green tone as "Your Uploads" button) */
+/* UNREAD HIGHLIGHT (same green tone as "Your Uploads" button) */
 .notification-card.unread {
   background: #E4F8EB;
   border-left: 6px solid #C8F0D1;
 }
 
-/* ✅ Fade-in Animation (smooth entry) */
+/* Fade-in Animation (smooth entry) */
 .notification-card {
   opacity: 0;
   transform: translateY(10px);
@@ -163,3 +157,4 @@ body {
     transform: translateY(0);
   }
 }
+
