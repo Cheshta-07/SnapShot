@@ -1,0 +1,305 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Background color from the Gallery page image (light purple/pink) */
+    background: #f4eff7; 
+    font-family: 'Poppins', Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.grid {
+    display: grid;
+    gap: 32px; /* Spacing between grid items/cards */
+}
+.grid--cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* --- 1. Header Styles --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 24px;
+    position: absolute; /* Position over the hero banner */
+    width: 100%;
+    z-index: 20;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.header__nav {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+/* Normal Navigation Links (header__nav-item) */
+.header__nav-item--normal {
+    text-decoration: none;
+    color: #2b2b2b;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 16px 34px;
+    border-radius: 28px;
+    background-color: #fbf8f6; /* Off-white background */
+    transition: all 0.2s ease-in-out;
+}
+.header__nav-item--normal:hover {
+    box-shadow: 0 0 12px rgba(255, 105, 180, 0.6);
+}
+
+/* Active Navigation Link (Gallery) */
+.header__nav-item--active {
+    background-color: #fef1f3; /* Light pink background */
+    box-shadow: 0 0 12px rgba(255, 105, 180, 0.6); /* Pink glow */
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 16px 34px;
+    border-radius: 28px;
+}
+
+.header__actions {
+    gap: 52px;
+    font-size: 32px; /* For the emoji icons */
+}
+
+.header__icon {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.header__cta-btn {
+    background: #fff;
+    border: none;
+    padding: 14px 34px;
+    border-radius: 28px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+/* --- 2. Hero Section (Gallery View) --- */
+.hero--gallery {
+    height: 400px; 
+    background-size: cover;
+    background-position: center bottom;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient Overlay for the faded pink look */
+.hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Soft pink gradient from top to bottom */
+    background: linear-gradient(to bottom, rgba(255, 230, 230, 0.8) 0%, rgba(255, 255, 255, 0.4) 30%, transparent 100%);
+    z-index: 1;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start; /* Align title and filters to the left */
+    height: 100%;
+    padding-bottom: 24px;
+}
+
+.hero__title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 24px; 
+}
+
+.gallery__filters {
+    display: flex;
+    justify-content: flex-start; 
+    gap: 1.3rem;
+    margin-top: -12px; 
+    padding-bottom: 12px;
+}
+
+.btn {
+    /* Base button style */
+    padding: 0.75rem 2.1rem;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    background: #fff;
+    color: #2b2b2b;
+    box-shadow: 0 2px 8px #ecebf0;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+/* Modifier: Primary/Active Button Style */
+.button--primary {
+    background: #ffe6ec; /* Light pink background for active button */
+    color: #000;
+    /* Pink border/shadow effect */
+    box-shadow: 0 0 0 2px #ffb0ca, 0 4px 10px rgba(255, 176, 202, 0.5); 
+}
+
+/* --- 3. Gallery Cards Section --- */
+.gallery--cards-bg {
+    /* background is initially purple, but we'll override it for the green section */
+    background: #f4eff7; 
+    padding-bottom: 60px;
+    /* Pulls the cards up to overlap the hero section slightly */
+    margin-top: -100px; 
+    position: relative;
+    z-index: 5;
+}
+
+.gallery__grid {
+    margin: 0 auto; 
+    padding-top: 60px; /* Space between filters and cards */
+}
+
+.gallery__item {
+    /* Individual Card Style */
+    background: #ffeff0; /* Very light pink/off-white card background */
+    padding: 24px;
+    border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery__item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.gallery__img {
+    width: 100%;
+    height: 300px; 
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 16px;
+}
+
+.gallery__caption {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+    padding-left: 0;
+}
+
+/* ------------------------------------------- */
+/* --- NEW STYLES FOR CHALLENGE/GALLERY 3 LAYOUT --- */
+/* ------------------------------------------- */
+
+/* NEW SECTION: Green Background Area (Seen in Challenge/Gallery 3 views) */
+.gallery__background--green {
+    /* Use the light green color from the image */
+    background: #e1ffe4; 
+    padding-top: 50px; /* Space above the subtitle */
+    padding-bottom: 50px; /* Space below the subtitle */
+    
+    /* Overlap the hero banner's bottom edge slightly */
+    margin-top: -100px; 
+    position: relative;
+    z-index: 4; /* Below the header, above the cards */
+}
+
+.gallery__subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: #444;
+}
+
+/* Share your moments box (Black box with white text) */
+.hero__cta-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: rgba(30, 30, 30, 0.85); /* Dark transparent background */
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Adjust the main gallery card section when preceded by the green background */
+.gallery__background--green + .gallery--cards-bg {
+    background: transparent; /* Makes the green background show through */
+    margin-top: 0; /* Align cards right below the green section */
+}
+
+.gallery__background--green + .gallery--cards-bg .gallery__grid {
+    padding-top: 0; /* Remove top padding for immediate alignment */
+}
+
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .header__nav {
+        display: none;
+    }
+    .grid--cols-3 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .header {
+        padding: 20px 16px;
+    }
+    .hero--gallery {
+        height: 350px;
+    }
+    .gallery__filters {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 0;
+    }
+    .gallery__grid {
+        grid-template-columns: 1fr;
+        padding-top: 40px;
+    }
+    .gallery--cards-bg {
+        margin-top: -80px;
+        padding-bottom: 40px;
+    }
+    .hero__cta-box {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+}
