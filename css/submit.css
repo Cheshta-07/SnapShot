@@ -1,39 +1,47 @@
-body {
+/* ===========================
+   RESET & BASE
+=========================== */
+* {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #FBF8F6;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Navbar */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff8f0; /* soft cream background */
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
 .navbar {
-  background: transparent; /* keep transparent */
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 40px;
   width: 100%;
-  box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 10;
 }
 
-.navbar .logo {
+.logo {
   display: flex;
   align-items: center;
   font-weight: 700;
   font-size: 22px;
 }
 
-.icon {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
+.logo img {
   margin-right: 10px;
 }
 
+/* Navigation buttons (pill-shaped, bigger) */
 .nav-links {
   display: flex;
   justify-content: center;
@@ -42,86 +50,115 @@ body {
 
 .nav-links button {
   border: none;
-  padding: 10px 24px;
+  padding: 16px 34px; /* bigger like profile page */
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 28px;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 16px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .nav-links button:hover {
   background: #f6f6f6;
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.5);
 }
 
+/* NAV ICONS */
 .nav-icons {
   display: flex;
   align-items: center;
   gap: 25px;
-  font-size: 22px;
-  cursor: pointer;
 }
 
+.icon {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.6));
+}
+
+/* Action button (Snap & Share) */
 .nav-icons button {
   border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  background-color: white;
+  padding: 16px 34px;
+  border-radius: 28px;
+  background-color: #fbf8f6;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 16px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .nav-icons button:hover {
-  background: #f6f6f6;
+  background: #f0ede9;
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.5);
 }
 
-/* Cover Section */
+/* ===========================
+   COVER SECTION
+=========================== */
 .cover {
   position: relative;
   height: 250px;
   background: url("../assets/images/water.png") no-repeat center center/cover;
+  border-radius: 0 0 20px 20px;
 }
 
-/* Page Title */
+/* ===========================
+   PAGE TITLE
+=========================== */
 .page-title {
-  margin: 30px auto 20px;
-  background: white;
-  border-radius: 50px;
-  padding: 15px 40px;
-  width: fit-content;
+  margin: 100px auto 30px;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 16px 34px;
   font-size: 18px;
-  font-weight: bold;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  color: #333;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  width: fit-content;
   position: relative;
-  z-index: 3; /* ensures it's above the overlay */
+  z-index: 3;
 }
 
-/* Upload Section */
+/* ===========================
+   UPLOAD & DETAILS SECTIONS
+=========================== */
 .upload-section,
 .details-section {
-  background: #ffeef0;
+  background: #ffeff0; /* soft pink card background for vibe consistency */
   margin: 30px auto;
-  padding: 25px;
-  border-radius: 12px;
+  padding: 24px;
+  border-radius: 24px;
   width: 70%;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .upload-section h3,
 .details-section h3 {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
 /* Upload Box */
 .upload-box {
-  background: #d8f5e1;
+  background: #dfffe2; /* light green accent like profile upload */
   border: 2px dashed #bbb;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 25px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .upload-box p {
@@ -130,54 +167,100 @@ body {
   color: #444;
 }
 
+/* Upload Button */
 .upload-btn {
   display: inline-block;
-  padding: 10px 20px;
-  background: white;
-  border-radius: 20px;
-  font-weight: 500;
+  padding: 16px 34px; /* bigger like profile buttons */
+  border-radius: 28px;
+  border: none;
+  background: #fbf8f6;
+  font-weight: 600;
+  font-size: 16px;
   cursor: pointer;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
 .upload-btn:hover {
-  background: #f6f6f6;
+  background: #f0ede9;
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.4);
 }
 
-/* Details */
+/* Detail Inputs */
 .detail-input {
   display: block;
   width: 95%;
   margin: 15px auto;
-  padding: 12px;
-  border-radius: 8px;
+  padding: 14px;
+  border-radius: 12px;
   border: 2px dashed #bbb;
-  background: #d8f5e1;
+  background: #dfffe2;
   outline: none;
   font-size: 14px;
 }
 
-/* Submit */
+/* Submit Section */
 .submit-section {
   margin: 40px auto;
-  padding: 20px;
-  border-radius: 12px;
+  padding: 24px;
+  border-radius: 24px;
   width: 70%;
   text-align: center;
+  background: #ffeff0; /* card-like background */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .submit-section button {
-  padding: 12px 30px;
+  padding: 16px 34px; /* bigger pill button */
   border: none;
-  border-radius: 20px;
-  background: white;
-  font-weight: bold;
+  border-radius: 28px;
+  background: #fbf8f6;
+  font-weight: 600;
+  font-size: 16px;
   cursor: pointer;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
 .submit-section button:hover {
-  background: #f6f6f6;
+  background: #f0ede9;
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.4);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none;
+  }
+  .upload-section,
+  .details-section,
+  .submit-section {
+    width: 90%;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 20px 16px;
+  }
+  .cover {
+    height: 200px;
+  }
+  .page-title {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+  .upload-box,
+  .detail-input {
+    padding: 20px;
+  }
+  .upload-btn,
+  .submit-section button {
+    padding: 14px 28px;
+    font-size: 14px;
+  }
 }
