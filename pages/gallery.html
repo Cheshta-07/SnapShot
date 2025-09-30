@@ -4,12 +4,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery</title> 
   <link rel="stylesheet" href="../css/gallery.css">
-
 </head>
 <body>
   <main class="main-container">
     <section class="hero-section">
-      <div class="hero-overlay"></div>
       <div class="header-container">
         <div class="header-content">
           <header class="header-nav">
@@ -25,9 +23,15 @@
             </nav>
             
             <div class="header-actions">
-              <img src="../assets/images/img_bell.svg" class="notification-icon" />
-              <img src="../assets/images/img_icon.svg" class="profile-icon" />
-              <button class="cta-button">Snap & Share</button>
+              <a href="notification.html">
+                <img src="../assets/images/img_bell.svg" class="notification-icon" />
+              </a>
+              <a href="profile.html">
+                <img src="../assets/images/img_icon.svg" class="profile-icon" />
+              </a>
+              <a href="submit.html">
+                <button class="cta-button">Snap & Share</button>
+              </a>
             </div>
           </header>
           
@@ -37,10 +41,10 @@
     </section>
     
     <section class="filter-tabs" role="tablist" aria-label="Gallery filters">
-      <button class="filter-tab active" role="tab" aria-selected="true" data-filter="all">All Photos</button>
-      <button class="filter-tab" role="tab" aria-selected="false" data-filter="challenge">Today's Challenge</button>
-      <button class="filter-tab" role="tab" aria-selected="false" data-filter="loved">Most Loved</button>
-      <button class="filter-tab" role="tab" aria-selected="false" data-filter="recent">Recent</button>
+      <button class="filter-tab active" role="tab" aria-selected="true"> All Photos</button>
+      <button class="filter-tab" role="tab" aria-selected="false"> Today's Challenge</button>
+      <button class="filter-tab" role="tab" aria-selected="false"> Most Loved</button>
+      <button class="filter-tab" role="tab" aria-selected="false"> Recent</button>
     </section>
     
     <section class="gallery-grid" role="main" aria-label="Photo gallery">
@@ -75,6 +79,5 @@
       </article>
     </section>
   </main>
-  </script>
 </body>
 </html>
