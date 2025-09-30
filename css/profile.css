@@ -1,13 +1,19 @@
-body {
+/* RESET */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Poppins', sans-serif;
-  background-color: #FBF8F6;
+  background-color: #fff8f0; /* soft cream background */
   color: #333;
 }
 
-/* Navbar */
+/* NAVBAR */
 .navbar {
-  background: transparent; /* keep transparent */
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,20 +26,18 @@ body {
   z-index: 10;
 }
 
-.navbar .logo {
+.logo {
   display: flex;
   align-items: center;
   font-weight: 700;
   font-size: 22px;
 }
 
-.icon {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
+.logo img {
   margin-right: 10px;
 }
 
+/* Navigation buttons (larger + pill style) */
 .nav-links {
   display: flex;
   justify-content: center;
@@ -42,50 +46,80 @@ body {
 
 .nav-links button {
   border: none;
-  padding: 10px 24px;
+  padding: 16px 34px; /* bigger like first code */
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 28px; /* pill shape */
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 16px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .nav-links button:hover {
   background: #f6f6f6;
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.5);
 }
 
+/* NAV ICONS */
 .nav-icons {
   display: flex;
   align-items: center;
   gap: 25px;
   font-size: 22px;
-  cursor: pointer;
 }
 
+.icon {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.6));
+}
+
+.notification-icon.active-icon {
+  filter: drop-shadow(0 0 12px rgba(255, 105, 180, 0.8));
+  transform: scale(1.05);
+}
+
+.profile-icon.active-profile {
+  filter: drop-shadow(0 0 12px rgba(255, 105, 180, 0.8));
+  transform: scale(1.1);
+}
+
+/* Action button (bigger like first code) */
 .nav-icons button {
   border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  background-color: white;
+  padding: 16px 34px;
+  border-radius: 28px;
+  background-color: #fbf8f6;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 16px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .nav-icons button:hover {
-  background: #f6f6f6;
+  background: #f0ede9;
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.5);
 }
 
-/* Cover Section */
+/* COVER SECTION */
 .cover {
   position: relative;
   height: 250px;
   background: url("../assets/images/water.png") no-repeat center center/cover;
+  border-radius: 0 0 20px 20px;
 }
 
-/* Profile Info */
+/* PROFILE INFO */
 .profile-info {
   display: flex;
   align-items: center;
@@ -105,9 +139,13 @@ body {
 }
 
 .profile-text h2 {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.profile-text h4 {
+  font-weight: 500;
+  color: #888;
 }
 
 .profile-text p {
@@ -116,7 +154,7 @@ body {
   margin-top: 6px;
 }
 
-/* Tabs */
+/* TABS */
 .tabs {
   display: flex;
   justify-content: center;
@@ -126,7 +164,7 @@ body {
   text-transform: uppercase;
 }
 
-/* Upload Button */
+/* UPLOAD BUTTON (larger like first code) */
 .upload-btn {
   display: flex;
   justify-content: center;
@@ -134,56 +172,61 @@ body {
 }
 
 .upload-btn button {
-  padding: 10px 24px;
-  border-radius: 20px;
+  padding: 16px 34px;
+  border-radius: 28px;
   border: none;
-  background: #C8F0D1;
+  background: #dfffe2;
   cursor: pointer;
   font-weight: 600;
-  transition: 0.3s;
-  font-size: 14px;
-  box-shadow: none;
+  transition: all 0.3s ease;
+  font-size: 16px;
 }
 
 .upload-btn button:hover {
-  background: #b4e6be;
+  background: #c8f0d1;
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.4);
 }
 
-/* Photo Grid */
+/* PHOTOS GRID */
 .photos {
   display: flex;
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
-  padding: 20px 40px;
+  padding: 20px 40px 60px;
 }
 
-/* Photo Cards */
+/* PHOTO CARDS (bigger + padded like third code gallery) */
 .photo-card {
-  background: #fff;
-  border-radius: 12px; /* softer rounded corners */
+  background: #ffeff0; /* soft pink background, bigger presence */
+  border-radius: 24px;
   overflow: hidden;
-  width: 250px;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1); /* subtle, even shadow */
-  transition: transform 0.3s ease;
+  width: 280px; /* a bit wider */
+  padding: 24px; /* extra padding like gallery cards */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .photo-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(228, 177, 177, 0.4);
 }
 
 .photo-card img {
   width: 100%;
   height: 300px;
+  border-radius: 12px;
   object-fit: cover;
+  margin-bottom: 16px;
 }
 
 .photo-card p {
   text-align: center;
-  padding: 10px;
-  font-weight: 500;
-  font-size: 14px;
-  background: #FCEAEA;
-  margin: 0;
-  border-top: 1px solid #f3d9d9;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
 }
