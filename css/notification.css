@@ -1,38 +1,47 @@
-body {
+/* ===========================
+   RESET & BASE
+=========================== */
+* {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #FBF8F6;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff8f0; /* soft cream background */
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
 .navbar {
-  background: transparent; 
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 40px;
   width: 100%;
-  box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 10;
 }
 
-.navbar .logo {
+.logo {
   display: flex;
   align-items: center;
   font-weight: 700;
   font-size: 22px;
 }
 
-.icon {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
+.logo img {
   margin-right: 10px;
 }
 
+/* Navigation buttons (bigger, pill-shaped, like profile page) */
 .nav-links {
   display: flex;
   justify-content: center;
@@ -41,83 +50,112 @@ body {
 
 .nav-links button {
   border: none;
-  padding: 10px 24px;
+  padding: 16px 34px; /* bigger like profile page */
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 28px;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 16px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .nav-links button:hover {
   background: #f6f6f6;
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.5);
 }
 
+/* NAV ICONS */
 .nav-icons {
   display: flex;
   align-items: center;
   gap: 25px;
-  font-size: 22px;
-  cursor: pointer;
 }
 
+.icon {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.6));
+}
+
+/* Action button like Snap & Share */
 .nav-icons button {
   border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  background-color: white;
+  padding: 16px 34px;
+  border-radius: 28px;
+  background-color: #fbf8f6;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 16px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .nav-icons button:hover {
-  background: #f6f6f6;
+  background: #f0ede9;
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.5);
 }
 
+/* ===========================
+   COVER SECTION
+=========================== */
 .cover {
   position: relative;
   height: 250px;
   background: url("../assets/images/water.png") no-repeat center center/cover;
+  border-radius: 0 0 20px 20px;
 }
 
+/* ===========================
+   PAGE TITLE
+=========================== */
 .page-title {
-  margin: 40px auto 30px;
+  margin: 100px auto 30px;
   background: #ffffff;
-  border-radius: 30px;
-  padding: 12px 35px;
-  width: fit-content;
+  border-radius: 28px;
+  padding: 16px 34px;
   font-size: 18px;
   font-weight: 600;
   color: #333;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
-  letter-spacing: 0.3px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  width: fit-content;
 }
 
+/* ===========================
+   NOTIFICATION SECTION
+=========================== */
 .notification-section {
   width: 70%;
-  margin: 0 auto 60px;
+  margin: 60px auto 60px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
+/* Notification Card (matches gallery/photo card vibe) */
 .notification-card {
   display: flex;
   align-items: flex-start;
   gap: 15px;
-  background: #fff;
-  padding: 18px 24px;
-  border-radius: 16px;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.08);
+  background: #ffeff0; /* soft pink background like gallery cards */
+  padding: 24px; /* bigger padding like gallery cards */
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .notification-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(228, 177, 177, 0.4);
 }
 
 .notification-card .icon {
@@ -138,13 +176,13 @@ body {
   margin-top: 6px;
 }
 
-/* UNREAD HIGHLIGHT (same green tone as "Your Uploads" button) */
+/* UNREAD highlight */
 .notification-card.unread {
   background: #E4F8EB;
   border-left: 6px solid #C8F0D1;
 }
 
-/* Fade-in Animation (smooth entry) */
+/* Fade-in animation */
 .notification-card {
   opacity: 0;
   transform: translateY(10px);
@@ -158,3 +196,31 @@ body {
   }
 }
 
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none;
+  }
+  .notification-section {
+    width: 90%;
+    margin: 40px auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 20px 16px;
+  }
+  .cover {
+    height: 200px;
+  }
+  .page-title {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+  .notification-card {
+    padding: 20px;
+  }
+}
